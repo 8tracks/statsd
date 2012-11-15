@@ -65,7 +65,7 @@ var flush_stats = function graphite_flush(ts, metrics) {
   for (key in counters) {
     var value = counters[key];
 
-    statString += 'counter.' + key + ' ' + value          + ' ' + ts + "\n";
+    statString += key + '.counter' + ' ' + value          + ' ' + ts + "\n";
 
     numStats += 1;
   }
@@ -103,9 +103,9 @@ var flush_stats = function graphite_flush(ts, metrics) {
 
         var clean_pct = '' + pct;
         clean_pct.replace('.', '_');
-        message += 'timer.' + key + '.mean_'  + clean_pct + ' ' + mean           + ' ' + ts + "\n";
-        message += 'timer.' + key + '.upper_' + clean_pct + ' ' + maxAtThreshold + ' ' + ts + "\n";
-        message += 'timer.' + key + '.sum_' + clean_pct + ' ' + sum + ' ' + ts + "\n";
+        message += key + '.timer' + '.mean_'  + clean_pct + ' ' + mean           + ' ' + ts + "\n";
+        message += key + '.timer' + '.upper_' + clean_pct + ' ' + maxAtThreshold + ' ' + ts + "\n";
+        message += key + '.timer' + '.sum_' + clean_pct + ' ' + sum + ' ' + ts + "\n";
       }
 
       sum = cumulativeValues[count-1];
