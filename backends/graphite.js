@@ -65,7 +65,7 @@ var flush_stats = function graphite_flush(ts, metrics) {
   for (key in counters) {
     var value = counters[key];
 
-    statString += key + '.counter' + ' ' + value          + ' ' + ts + "\n";
+    statString += key + '.count' + ' ' + value          + ' ' + ts + "\n";
 
     numStats += 1;
   }
