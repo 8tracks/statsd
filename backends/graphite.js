@@ -130,7 +130,7 @@ var flush_stats = function graphite_flush(ts, metrics) {
   }
 
   for (key in gauges) {
-    statString += 'gauge.' + key + ' ' + gauges[key] + ' ' + ts + "\n";
+    statString += key + ".gauge" + ' ' + gauges[key] + ' ' + ts + "\n";
     numStats += 1;
   }
 
