@@ -117,12 +117,12 @@ var flush_stats = function graphite_flush(ts, metrics) {
       }
       var stddev = Math.sqrt(sumOfDiffs / count);
 
-      message += key + 'timer.std ' + stddev  + ' ' + ts + "\n";
-      message += key + 'timer.upper ' + max   + ' ' + ts + "\n";
-      message += key + 'timer.lower ' + min   + ' ' + ts + "\n";
-      message += key + 'timer.count ' + count + ' ' + ts + "\n";
-      message += key + 'timer.sum ' + sum  + ' ' + ts + "\n";
-      message += key + 'timer.mean ' + mean + ' ' + ts + "\n";
+      message += key + '.timer.std ' + stddev  + ' ' + ts + "\n";
+      message += key + '.timer.upper ' + max   + ' ' + ts + "\n";
+      message += key + '.timer.lower ' + min   + ' ' + ts + "\n";
+      message += key + '.timer.count ' + count + ' ' + ts + "\n";
+      message += key + '.timer.sum ' + sum  + ' ' + ts + "\n";
+      message += key + '.timer.mean ' + mean + ' ' + ts + "\n";
       statString += message;
 
       numStats += 1;
